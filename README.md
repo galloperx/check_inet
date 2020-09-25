@@ -1,15 +1,6 @@
 # check_inet
 
-Check if the Internet is available.
+Really basic Flutter plugin that provides a simple way to check if the Internet is available on an Android device.
+Note: it requires ACCESS_NETWORK_STATE permission.
 
-## Getting Started
-
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
 
