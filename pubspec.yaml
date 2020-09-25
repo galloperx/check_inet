@@ -1,6 +1,6 @@
 name: check_inet
 description: Really basic plugin that provides a simple way to check if the Internet is available on an Android device.
-version: 1.0.0
+version: 1.0.1
 author: Alex I. (alex.galloper@gmail.com)
 homepage: https://github.com/galloperx/check_inet
 
