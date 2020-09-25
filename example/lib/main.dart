@@ -14,26 +14,22 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
   bool _internetActive = false;
 
   @override
   void initState() {
     super.initState();
-    initPlatformState();
+    checkInternetAvailability();
   }
 
   // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
+  Future<void> checkInternetAvailability() async {
     bool internetActive;
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
-      //platformVersion = await CheckInet.platformVersion;
       internetActive = await CheckInet.checkInternet;
-    } on Exception catch(_ee){
-      //platformVersion = 'Failed to check Internet.';
+    } on Exception {
       internetActive = false;
-      print(_ee);
     }
 
     // If the widget was removed from the tree while the asynchronous platform
@@ -42,7 +38,6 @@ class _MyAppState extends State<MyApp> {
     if (!mounted) return;
 
     setState(() {
-      //_platformVersion = platformVersion;
       _internetActive = internetActive;
     });
   }
@@ -55,7 +50,7 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: _internetActive ? Text('Internet is ACTIVE!') : CircularProgressIndicator(),
+          child: _internetActive ? Text('Internet is available!') : CircularProgressIndicator(),
         ),
       ),
     );
